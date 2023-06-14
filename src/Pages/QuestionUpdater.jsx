@@ -1,59 +1,59 @@
 import { useEffect } from "react";
 import { useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import EmployeeForm from "../Components/QuestionForm";
+import QuestionForm from "../Components/QuestionForm";
 import Loading from "../Components/Loading";
 
-const updateEmployee = (employee) => {
-  return fetch(`/api/employees/${employee._id}`, {
+const updateQuestion = (question) => {
+  return fetch(`/api/questions/${question._id}`, {
     method: "PATCH",
     headers: {
       "Content-Type": "application/json",
     },
-    body: JSON.stringify(employee),
+    body: JSON.stringify(question),
   }).then((res) => res.json());
 };
 
-const fetchEmployee = (id) => {
-  return fetch(`/api/employees/${id}`).then((res) => res.json());
+const fetchQuestion = (id) => {
+  return fetch(`/api/question/${id}`).then((res) => res.json());
 };
 
-const EmployeeUpdater = () => {
+const QuestionUpdater = () => {
   const { id } = useParams();
   const navigate = useNavigate();
 
-  const [employee, setEmployee] = useState(null);
+  const [question, setQuestion] = useState(null);
   const [updateLoading, setUpdateLoading] = useState(false);
-  const [employeeLoading, setEmployeeLoading] = useState(true);
+  const [questionLoading, setQuestionLoading] = useState(true);
 
   useEffect(() => {
-    setEmployeeLoading(true);
-    fetchEmployee(id).then((employee) => {
-      setEmployee(employee);
-      setEmployeeLoading(false);
+    setQuestionLoading(true);
+    fetchQuestion(id).then((question) => {
+      setQuestion(question);
+      setQuestionLoading(false);
     });
   }, [id]);
 
-  const handleUpdateEmployee = (employee) => {
+  const handleUpdateQuestion = (question) => {
     setUpdateLoading(true);
-    updateEmployee(employee).then(() => {
+    updateQuestion(question).then(() => {
       setUpdateLoading(false);
       navigate("/");
     });
   };
 
-  if (employeeLoading) {
+  if (questionLoading) {
     return <Loading />;
   }
 
   return (
-    <EmployeeForm
-      employee={employee}
-      onSave={handleUpdateEmployee}
+    <QuestionForm
+      question={question}
+      onSave={handleUpdateQuestion}
       disabled={updateLoading}
       onCancel={() => navigate("/")}
     />
   );
 };
 
-export default EmployeeUpdater;
+export default QuestionUpdater;

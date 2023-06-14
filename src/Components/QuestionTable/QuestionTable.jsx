@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import "./QuestionTable.css";
 
 const QuestionTable = ({ questions, onDelete }) => (
-  <div className="EmployeeTable">
+  <div className="QuestionTable">
     <table>
       <thead>
         <tr>

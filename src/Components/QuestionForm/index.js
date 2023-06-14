@@ -1,3 +1,3 @@
-import EmployeeForm from "./QuestionForm";
+import QuestionForm from "./QuestionForm";
 
-export default EmployeeForm;
+export default QuestionForm;
