@@ -16,14 +16,12 @@ const QuestionTable = ({ questions, onDelete }) => (
       <tbody>
         {questions.map((question) => (
           <tr key={question.id}>
-            <td>{question.questionId}</td>
-            <td>{question.name}</td>
+            <td>{question.question_id}</td>
+            <td>{question.title}</td>
             <td>{question.date}</td>
             <td>{question.numberOfAnswers}</td>
             <td>
-              <Link to={`/update/${question._id}`}>
-                <button type="button">Update</button>
-              </Link>
+
               <button type="button" onClick={() => onDelete(question._id)}>
                 Delete
               </button>
