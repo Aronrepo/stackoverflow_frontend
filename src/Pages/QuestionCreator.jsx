@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import QuestionForm from "../Components/QuestionForm";
 
 const createQuestion = (question) => {
-  return fetch("/api/questions", {
+  return fetch("/questions/", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",

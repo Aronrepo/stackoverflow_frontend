@@ -8,6 +8,7 @@ const QuestionTable = ({ questions, onDelete }) => (
         <tr>
           <th>Id</th>
           <th>Name</th>
+          <th>Description</th>
           <th>date</th>
           <th>Number Of Answers</th>
           <th />
@@ -18,6 +19,7 @@ const QuestionTable = ({ questions, onDelete }) => (
           <tr key={question.question_id}>
             <td>{question.question_id}</td>
             <td>{question.title}</td>
+            <td>{question.description}</td>
             <td>{question.created}</td>
             <td>{question.numberOfAnswers}</td>
             <td>
