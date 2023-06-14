@@ -3,11 +3,11 @@ import Loading from "../Components/Loading";
 import QuestionTable from "../Components/QuestionTable";
 
 const fetchQuestions = () => {
-  return fetch("/api/questions").then((res) => res.json());
+  return fetch("/questions/all").then((res) => res.json());
 };
 
 const deleteQuestion = (id) => {
-  return fetch(`/api/question/${id}`, { method: "DELETE" }).then((res) =>
+  return fetch(`/question/${id}`, { method: "DELETE" }).then((res) =>
     res.json()
   );
 };
