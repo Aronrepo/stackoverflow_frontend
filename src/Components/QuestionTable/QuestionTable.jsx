@@ -18,7 +18,7 @@ const QuestionTable = ({ questions, onDelete }) => (
           <tr key={question.question_id}>
             <td>{question.question_id}</td>
             <td>{question.title}</td>
-            <td>{question.date}</td>
+            <td>{question.created}</td>
             <td>{question.numberOfAnswers}</td>
             <td>
 
