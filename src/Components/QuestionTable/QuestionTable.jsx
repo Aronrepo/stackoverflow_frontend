@@ -15,7 +15,7 @@ const QuestionTable = ({ questions, onDelete }) => (
       </thead>
       <tbody>
         {questions.map((question) => (
-          <tr key={question.id}>
+          <tr key={question.question_id}>
             <td>{question.question_id}</td>
             <td>{question.title}</td>
             <td>{question.date}</td>
