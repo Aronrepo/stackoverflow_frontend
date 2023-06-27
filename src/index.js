@@ -6,6 +6,7 @@ import ErrorPage from "./Pages/ErrorPage";
 import QuestionList from "./Pages/QuestionList";
 import QuestionCreator from "./Pages/QuestionCreator";
 import QuestionUpdater from "./Pages/QuestionUpdater";
+import AnswerList from './Components/AnswerTable/AnswerList';
 import reportWebVitals from './reportWebVitals';
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
@@ -24,8 +25,8 @@ const router = createBrowserRouter([
         element: <QuestionCreator />,
       },
       {
-        path: "/update/:id",
-        element: <QuestionUpdater />,
+        path: "/answers/:id",
+        element: <AnswerList />,
       },
 
     ],

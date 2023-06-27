@@ -23,7 +23,9 @@ const QuestionTable = ({ questions, onDelete }) => (
             <td>{question.created}</td>
             <td>{question.numberOfAnswers}</td>
             <td>
-
+            <Link to={`/answers/${question.question_id}`}>
+                <button type="button">Answers</button>
+              </Link>
               <button type="button" onClick={() => onDelete(question._id)}>
                 Delete
               </button>
