@@ -26,7 +26,7 @@ const AnswerList = ({ onDelete }) => {
     deleteAnswer(id);
   
     setAnswers((answers) => {
-      return answers.filter((answer) => answer._id !== id);
+      return answers.filter((answer) => answer.answer_id !== id);
     });
   };
 
@@ -63,7 +63,7 @@ const AnswerList = ({ onDelete }) => {
             <td>{answer.numberOfAnswers}</td>
             <td>
 
-              <button type="button" onClick={() => handleDelete(answer._id)}>
+              <button type="button" onClick={() => handleDelete(answer.answer_id)}>
                 Delete
               </button>
             </td>
